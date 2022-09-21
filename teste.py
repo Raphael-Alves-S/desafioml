@@ -40,8 +40,8 @@ def entityorder(listorders):
             carrierid = shipments['receiver_address']['agency']['carrier_id']
         else:
             recipient = "Domicilio"
-            agencyid = " "
-            carrierid = " "
+            agencyid = ""
+            carrierid = ""
             
 #Escrita no CSV                
         csvouput = idorder, iditem, nomeitem+", "+coratt, shipmentid, status, substatus, logistictype, recipient, agencyid, carrierid, separator.join(receiver)
