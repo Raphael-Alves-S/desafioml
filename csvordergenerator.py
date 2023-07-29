@@ -6,7 +6,7 @@ def entityorder(listorders):
 #Criacao do arquivo csv e escrita do cabecalho        
     filecsv = open('csvimport.csv', 'w', newline='') 
     fieldnames = "ID Ordem", "ID Item", "Descrição do produto", "ID Envio", "Estado", "Subestado", "Tipo de logistica","Destino do envio","ID Agência" ,"ID Carrier","Endereço do Receptor"
-    wrt = csv.writer(filecsv, delimiter=';')
+    wrt = csv.writer(filecsv, delimiter=',')
     wrt.writerow(fieldnames)    
     separator = ' '
     
