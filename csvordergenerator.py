@@ -12,9 +12,8 @@ def read_file(file):
         else:
             return read_orders
     except FileNotFoundError as e:
-        print(f"Arquivo não encontrado \n"
+        return (f"Arquivo não encontrado \n"
               f"{e}")
-        return None
 
 
 def entityorder(order):
@@ -68,16 +67,19 @@ def entityorder(order):
                     receiver)
                 wrt.writerow(csvouput)
             except KeyError as e:
-                print(f"Não foi possivel retornar informações para o dado "f"{dados[i]}"" pois o parametro "f"{e} não "
+                return(f"Não foi possivel retornar informações para o dado "f"{order[i]}"" pois o parametro "f"{e} não "
                       f"existe \n"
                       f"{orders}")
 
+
         # Fechar arquivo
-        return filecsv.close()
+        filecsv.close()
+        return "Sucesso"
 
     else:
-        print("CSV não gerado, pois os dados estão vazios")
+        return "CSV não gerado, pois os dados estão vazios"
 
 
 # chamada da funcao
-entityorder(read_file('teste.txt'))
+resposta = entityorder(read_file('teste.txt'))
+print (resposta)
