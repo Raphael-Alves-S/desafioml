@@ -2,7 +2,6 @@ import requests
 import json
 import csv
 
-
 def read_file(file):
     try:
         open_file = open(file, 'r')
@@ -14,7 +13,6 @@ def read_file(file):
     except FileNotFoundError as e:
         return (f"Arquivo não encontrado \n"
               f"{e}")
-
 
 def entityorder(order):
     if order is not None:
@@ -71,7 +69,6 @@ def entityorder(order):
                       f"existe \n"
                       f"{orders}")
 
-
         # Fechar arquivo
         filecsv.close()
         return "Sucesso"
@@ -81,5 +78,5 @@ def entityorder(order):
 
 
 # chamada da funcao
-resposta = entityorder(read_file('teste.txt'))
-print (resposta)
+entityorder(read_file('teste.txt'))
+
